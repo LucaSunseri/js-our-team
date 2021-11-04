@@ -61,8 +61,11 @@ addMemberButton.addEventListener('click',function() {
 
   createCard(newMember);
 
+  membersTeam.push(newMember);
+
   console.log('Nuovo membro',newMember);
-  console.log('Array membri dopo il push',membersTeam); 
+  console.log('Vediamo il nostro array dopo il push',membersTeam);
+ 
 });
 
 
