@@ -42,38 +42,33 @@ for (let key in membersTeam) {
 
   const member = membersTeam[key];
 
-  let photo = member.photo;
-  let name = member.name;
-  let role = member.role;
+  // console.log('Foto',photo);
+  // console.log('Nome',name);
+  // console.log('Ruolo',role);
 
-  console.log('Foto',photo);
-  console.log('Nome',name);
-  console.log('Ruolo',role);
-
-  createCard(photo, name, role);
-  
+  createCard(member); 
 }
 
-function createCard(photo, name, role) {
+
+
+console.log(newObject);
+
+function createCard(member) {
 
   const teamCard = document.createElement('div');
   teamCard.className = 'team-card';
   teamContainer.append(teamCard);
 
-  photo;
-  name;
-  role,
-
   teamCard.innerHTML = `
   <div class="card-image">
   <img
-    src="${photo}"
+    src="${member.photo}"
     alt="Wayne Barnett"
   />
   </div>
   <div class="card-text">
-    <h3>${name}</h3>
-    <p>${role}</p>
+    <h3>${member.name}</h3>
+    <p>${member.role}</p>
   </div>
   `;
 }
