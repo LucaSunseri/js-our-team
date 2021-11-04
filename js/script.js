@@ -36,22 +36,35 @@ const teamContainer = document.querySelector('.team-container');
 teamContainer.innerHTML = '';
 
 
-
 for (let key in membersTeam) {
   // console.log(membersTeam[key]);
 
   const member = membersTeam[key];
 
-  // console.log('Foto',photo);
-  // console.log('Nome',name);
-  // console.log('Ruolo',role);
+  // console.log(member);
 
   createCard(member); 
 }
 
 
+const addMemberButton = document.querySelector('#addMemberButton');
 
-console.log(newObject);
+addMemberButton.addEventListener('click',function() {
+
+  console.log('Sto cliccando il bottone add');
+
+  const newMember = {
+    photo: document.querySelector('#image').value,
+    name: document.querySelector('#name').value,
+    role:  document.querySelector('#role').value,
+  }
+
+  createCard(newMember);
+
+  console.log('Nuovo membro',newMember);
+  console.log('Array membri dopo il push',membersTeam); 
+});
+
 
 function createCard(member) {
 
