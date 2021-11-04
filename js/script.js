@@ -1,3 +1,4 @@
+// Creazione del nostro array di oggetti
 const membersTeam = [
   {
     photo: 'img/wayne-barnett-founder-ceo.jpg',
@@ -36,22 +37,21 @@ const teamContainer = document.querySelector('.team-container');
 teamContainer.innerHTML = '';
 
 
+// Ciclo che inserisce le Team-Card di ogni membro nell'HTML
 for (let key in membersTeam) {
   // console.log(membersTeam[key]);
 
   const member = membersTeam[key];
-
   // console.log(member);
 
   createCard(member); 
 }
 
-
+// Al click aggiungo una nuova Team-Card nell'HTML
 const addMemberButton = document.querySelector('#addMemberButton');
 
 addMemberButton.addEventListener('click',function() {
-
-  console.log('Sto cliccando il bottone add');
+  // console.log('Sto cliccando il bottone add');
 
   const newMember = {
     photo: document.querySelector('#image').value,
@@ -61,13 +61,17 @@ addMemberButton.addEventListener('click',function() {
 
   createCard(newMember);
 
-  membersTeam.push(newMember);
+  // membersTeam.push(newMember);
 
-  console.log('Nuovo membro',newMember);
-  console.log('Vediamo il nostro array dopo il push',membersTeam);
+  // console.log('Nuovo membro',newMember);
+  // console.log('Vediamo il nostro array dopo il push',membersTeam);
 });
 
 
+/**
+ * Funzione che crea una Team-Card
+ * @param {object} member 
+ */
 function createCard(member) {
 
   const teamCard = document.createElement('div');
