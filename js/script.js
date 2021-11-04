@@ -65,7 +65,6 @@ addMemberButton.addEventListener('click',function() {
 
   console.log('Nuovo membro',newMember);
   console.log('Vediamo il nostro array dopo il push',membersTeam);
- 
 });
 
 
@@ -79,7 +78,7 @@ function createCard(member) {
   <div class="card-image">
   <img
     src="${member.photo}"
-    alt="Wayne Barnett"
+    alt="${member.name}"
   />
   </div>
   <div class="card-text">
